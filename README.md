@@ -7,6 +7,9 @@ We enter map data in text files. The algorithm finds the path.
 Worldwide map can be seen using
 [this link](https://www.submarinecablemap.com/)
 
+Light travels at the fastest speed. We need not consider distance when finding route.
+We need to consider number of nodes on the way, along with the existing traffic in the route.
+
 ### <ins> Abstract</ins>: 
 
   * We need to send data from our computer to a different server using the internet. It is sent to different countries through Submarine cables which are installed in the sea. The cables route about 99% of global internet traffic. These cables are also called Undersea cables.
