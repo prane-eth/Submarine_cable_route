@@ -29,7 +29,7 @@ India_Chennai - Singapore - 30 - 150
 ......
 
 
-In Java
+Java - model of code
 
 // Create nodes
 Node mumbai = new Node("India_Mumbai");
