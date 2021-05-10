@@ -15,7 +15,7 @@ There can be different files.
 Check map_screenshot.png to check map
 
 coordinates.txt - for visualizing in map
-        Assume map dimensions X=300, Y=100
+        Assume map dimensions X=150, Y=100
 Location - X - Y
 India_Mumbai - 10 - 50
 India_Chennai - 20 - 40
