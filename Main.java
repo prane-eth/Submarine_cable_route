@@ -33,7 +33,7 @@ class Main	{
 		String dstn = "Singapore";
 		
 		RouteFinder finder = new RouteFinder();
-		finder.find(src, dstn);  // prints best route
+		finder.find(src, dstn);  // prints best route 
 	}
 }
 
