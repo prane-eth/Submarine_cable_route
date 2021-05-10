@@ -1,0 +1,5 @@
+India_Mumbai - 10 - 50
+India_Chennai - 20 - 40
+Singapore - 50 - 10
+China_HongKong - 90 - 50
+SouthKorea - 110 - 80
