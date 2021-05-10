@@ -46,7 +46,7 @@ class Node	{
 		this.name = name;
 	}
 	
-	ArrayList<Node> connections = new ArrayList();
+	ArrayList connections = new ArrayList();
 	void connect(Node dstn, int distance)	{
 		connections.add(dstn);
 	}
