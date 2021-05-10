@@ -17,15 +17,15 @@ Check map_screenshot.png to check map
 coordinates.txt - for visualizing in map
         Assume map dimensions X=300, Y=100
 Location - X - Y
-India_Mumbai - 10, 50
-India_Chennai - 20, 40
+India_Mumbai - 10 - 50
+India_Chennai - 20 - 40
 ......
 
 
 Node connections
-Source - Destination - Capacity_Left (Tbps=Terra bytes per second)
-India_Mumbai - India_Chennai - 100
-India_Chennai - Singapore - 150
+Source - Destination - Distance - Capacity_Left (Tbps=Terra bytes per second)
+India_Mumbai - India_Chennai - 10 - 100
+India_Chennai - Singapore - 30 - 150
 
 
 In Java
@@ -53,5 +53,5 @@ String src = "India_Mumbai";
 String dstn = "Singapore";
 
 RouteFinder finder = new RouteFinder();
-finder.find(src, dstn);
+finder.find(src, dstn);  // prints best route
 
