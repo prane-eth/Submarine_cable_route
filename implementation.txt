@@ -1,0 +1,30 @@
+https://www.submarinecablemap.com/
+
+There can be multiple nodes in a country.
+In India, there are nodes in Mumbai, Chennai, Cochin, etc.
+
+We will include the following countries:
+India - Mumbai, Chennai, Cochin
+Sri Lanka, Singapore, Malaysia, Korea, Australia, USA
+China - HongKong, Shantou, Chongming, Nanhui
+We can consider less nodes instead of all.
+
+We write text file to store data. Our code will use data in file.
+There can be different files.
+
+Check map_screenshot.png to check map
+
+coordinates.txt - for visualizing in map
+        Assume map dimensions X=300, Y=100
+Location - X - Y
+India_Mumbai - 10, 50
+India_Chennai - 20, 40
+......
+
+
+Node connections
+Source - Destination - Capacity_Left (Tbps=Terra bytes per second)
+India_Mumbai - India_Chennai - 100
+India_Chennai - Singapore - 150
+
+
