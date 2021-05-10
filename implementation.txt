@@ -22,10 +22,11 @@ India_Chennai - 20 - 40
 ......
 
 
-Node connections
+connections.txt - Node connections
 Source - Destination - Distance - Capacity_Left (Tbps=Terra bytes per second)
 India_Mumbai - India_Chennai - 10 - 100
 India_Chennai - Singapore - 30 - 150
+......
 
 
 In Java
