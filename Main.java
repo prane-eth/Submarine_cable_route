@@ -1,8 +1,8 @@
 import java.util.*;
 import java.io.*;
 
-class Main	{
-	public static void main(String[] args)	{
+class Main  {
+	public static void main(String[] args)  {
 		Scanner sc = new Scanner(System.in);
 		
 		// Create nodes
@@ -21,7 +21,7 @@ class Main	{
 
 		File myObj = new File("connections.txt");
 		Scanner myReader = new Scanner(myObj);
-		while (myReader.hasNextLine()) {
+		while (myReader.hasNextLine())  {
 			line = myReader.nextLine();
 			arr = line.split(' - ');
 			srcNode = hm.get(arr[0]);
@@ -39,15 +39,15 @@ class Main	{
 	}
 }
 
-class Node	{
+class Node  {
 	String name;
-	Node()	{ }
-	Node(String name)	{
+	Node()  { }
+	Node(String name)  {
 		this.name = name;
 	}
 	
 	ArrayList connections = new ArrayList();
-	void connect(Node dstn, int distance)	{
+	void connect(Node dstn, int distance)  {
 		connections.add(dstn);
 	}
 }
