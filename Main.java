@@ -8,6 +8,8 @@ class Main	{
 		// Create nodes
 		Node mumbai = new Node("India_Mumbai");
 		Node chennai = new Node("India_Chennai");
+		/* India - Mumbai, Chennai, China - HongKong, Chongming
+		Singapore, Malaysia, Korea, USA */
 		
 		HashMap<String, Node> hm = new HashMap();
 		hm.add("India_Mumbai", mumbai);
