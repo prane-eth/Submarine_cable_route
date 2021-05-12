@@ -2,6 +2,9 @@
 
 Finds the best path to send the data through submarine cables.
 
+The code can be run online.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/vh-praneeth/Submarine_cable_route/HEAD)
+
 We enter map data in text files. The algorithm finds the path.
 
 Worldwide map can be seen using
