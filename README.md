@@ -21,10 +21,10 @@ The algorithm finds the shortest path between the mentioned source and destinati
 Code is uploaded to GitHub repository: https://github.com/vh-praneeth/Submarine_cable_route
 
 #### <ins> Sample Output</ins>: 
-![Sample Output](./sample_output.png "Sample Output")
+![Sample Output](./images/sample_output.png "Sample Output")
 
 #### <ins> Map screenshot</ins>: 
-![Map screenshot](./map_screenshot.png "Map screenshot")
+![Map screenshot](./images/map_screenshot.png "Map screenshot")
 
 &nbsp;
 
