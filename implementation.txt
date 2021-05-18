@@ -1,58 +1,53 @@
+This file contains my approach to the problem.
+
 https://www.submarinecablemap.com/
-
 There can be multiple nodes in a country.
-In India, there are nodes in Mumbai, Chennai, Cochin, etc.
-
-We will include the following countries:
-India - Mumbai, Chennai, Cochin
-Sri Lanka, Singapore, Malaysia, Korea, Australia, USA
-China - HongKong, Shantou, Chongming, Nanhui
-We can consider less nodes instead of all.
-
+For example in India, there are nodes in Mumbai, Chennai, Cochin, and more.
 We write text file to store data. Our code will use data in file.
-There can be different files.
-
-Check map_screenshot.png to check map
-
-coordinates.txt - for visualizing in map
-        Assume map dimensions X=150, Y=100
-Location - X - Y
-India_Mumbai - 10 - 50
-India_Chennai - 20 - 40
-......
 
 
 connections.txt - Node connections
 Source - Destination - Distance - Capacity_Left (Tbps=Terra bytes per second)
 India_Mumbai - India_Chennai - 10 - 100
 India_Chennai - Singapore - 30 - 150
-......
+.....
+
+coordinates.txt - for visualizing in map
+        Assume map dimensions X=150, Y=100
+        Check map_screenshot.png to check map
+Location - X - Y
+India_Mumbai - 10 - 50
+India_Chennai - 20 - 40
+.....
 
 
-Java - model of code
+Model of code
 
 // Create nodes
 Node mumbai = new Node("India_Mumbai");
 Node chennai = new Node("India_Chennai");
 
-// Add to hashmap to get later
+// Add nodes to hashmap to get later
 HashMap<String, Node> hm = new HashMap();
 hm.add("India_Mumbai", mumbai);
 hm.add("India_Chennai", chennai);
 
 Node srcNode, dstnNode;
+int distance;
 String[] arr;
 
 for line in file:
-        arr = line.split(' - ');
-        srcNode = hm.get(arr[0]);
-        dstnNode = hm.get(arr[1]);
-        srcNode.connect(dstnNode);
+	arr = line.split(' - ');
+	srcNode = hm.get(arr[0]);
+	dstnNode = hm.get(arr[1]);
+	distance = hm.get(arr[2])
+	srcNode.connect(dstnNode, distance);
 
 Take user input
-String src = "India_Mumbai";
-String dstn = "Singapore";
+String src = sc.next();  // India_Mumbai
+String dstn = sc.next();  // Singapore
 
+Use algorithm to find display the route
 RouteFinder finder = new RouteFinder();
 finder.find(src, dstn);  // prints best route
 

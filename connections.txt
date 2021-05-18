@@ -1,3 +1,4 @@
 India_Mumbai - India_Chennai - 10 - 100
 India_Chennai - Singapore - 30 - 150
 Singapore - SouthKorea - 50 - 100
+Singapore - USA - 90 - 100

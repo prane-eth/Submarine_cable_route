@@ -16,6 +16,7 @@ class Main  {
 		hm.add("India_Chennai", chennai);
 
 		Node srcNode, dstnNode;
+		int dist;
 		String[] arr;
 		String line;
 
@@ -23,16 +24,19 @@ class Main  {
 		Scanner myReader = new Scanner(myObj);
 		while (myReader.hasNextLine())  {
 			line = myReader.nextLine();
-			arr = line.split(' - ');
+			arr = line.split(" - ");
 			srcNode = hm.get(arr[0]);
 			dstnNode = hm.get(arr[1]);
-			srcNode.connect(dstnNode);
+			dist = Integer.valueOf(arr[2]);
+			srcNode.connect(dstnNode, dist);
 		}
 		myReader.close();
 		
 		// Take user input
 		String src = "India_Mumbai";
 		String dstn = "Singapore";
+		srcNode = hm.get(src);
+		dstnNode = hm.get(dstn);
 		
 		RouteFinder finder = new RouteFinder();
 		finder.find(src, dstn);  // prints best route 
