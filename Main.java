@@ -11,7 +11,7 @@ class Main  {
 		/* India - Mumbai, Chennai, China - HongKong, Chongming
 		Singapore, Malaysia, Korea, USA */
 		
-		HashMap<String, Node> hm = new HashMap();
+		HashMap hm = new HashMap<>();
 		hm.add("India_Mumbai", mumbai);
 		hm.add("India_Chennai", chennai);
 
@@ -39,7 +39,7 @@ class Main  {
 		dstnNode = hm.get(dstn);
 		
 		RouteFinder finder = new RouteFinder();
-		finder.find(src, dstn);  // prints best route 
+		finder.find(srcNode, dstnNode);  // prints best route 
 	}
 }
 
