@@ -16,7 +16,7 @@ class RouteFinder	{
 		DijShortestPath s = new DijShortestPath(arr, hm);
 		s.process();
 	}
-	static boolean read_data()	{
+	static boolean read_data() throws FileNotFoundException  {
 		try {
 			File my_file = new File("matrix.txt");
 			Scanner sc = new Scanner(my_file);
@@ -29,7 +29,7 @@ class RouteFinder	{
 					columns++;
 				System.out.println(rows + " " + columns);
 			}
-			int[][] arr = new int[rows][columns];
+			arr = new int[rows][columns];
 			sc.close();
 
 			// read in the data
