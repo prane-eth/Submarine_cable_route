@@ -8,32 +8,34 @@ class RouteFinder	{
 		if (status != true)
 			return;
 		HashMap<Integer, String> hm = new HashMap<Integer, String>();
-		hm.put(0, "India_Mumbai");
-		hm.put(1, "India_Chennai");
+		hm.put(0, "Mumbai");
+		hm.put(1, "Chennai");
 		hm.put(2, "Singapore");
 		hm.put(3, "Japan");
 		hm.put(4, "USA");
+		// display all nodes from hashmap
+		System.out.println("");
+		for (int num: hm.keySet())
+            System.out.println("\t" + num + " - " + hm.get(num));
+		System.out.println("");
+
 		DijShortestPath s = new DijShortestPath(arr, hm);
 		s.process();
 	}
-	static boolean read_data() throws FileNotFoundException  {
+	static boolean read_data() {
 		try {
-			File my_file = new File("matrix.txt");
-			Scanner sc = new Scanner(my_file);
+			Scanner sc = new Scanner(new File("matrix.txt"));
 			int rows = 0;
-			int columns = 0;
-			while (sc.hasNextLine()) { // count rots
-				rows++;
-				Scanner col_reader = new Scanner(sc.nextLine());
-				while (col_reader.hasNextInt())  // count columns
-					columns++;
-				System.out.println(rows + " " + columns);
+			while (sc.hasNextLine()) {
+				rows++;  // count rows
+				sc.nextLine();
 			}
+			int columns = rows;
 			arr = new int[rows][columns];
 			sc.close();
 
 			// read in the data
-			sc = new Scanner(my_file);
+			sc = new Scanner(new File("matrix.txt"));
 			for (int row = 0; row < rows; row++)
 				for (int col = 0; col < columns; col++)
 					if (sc.hasNextInt())
@@ -49,6 +51,8 @@ class RouteFinder	{
 }
 
 class DijShortestPath {
+	int NO_PARENT = -1;
+	
 	int[][] graph;
 	int len;
 	HashMap<Integer, String> hm;
