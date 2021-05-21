@@ -12,6 +12,8 @@ Finds the best path to send the data through submarine cables.
 ### <ins> Group</ins>: G7
 
 ### Report
+##### <ins> Output</ins>: 
+![Output](./images/output.png "Output")
 
 
 #### <ins> Objectives</ins>: 
