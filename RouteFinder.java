@@ -132,7 +132,6 @@ static void dijkstra(int[][] matrix, int startNode)  {
     printSolution(startNode, shortestDists, parentArr);
 }
 
-// print distances and shortest paths
 static void printSolution(int startNode,
                             int[] distances,
                             int[] parentArr)  {
@@ -146,19 +145,18 @@ static void printSolution(int startNode,
 			System.out.print(" -> " + nodeIndex + " ");
             System.out.print(hm.get(nodeIndex) + " \t\t ");
             System.out.print(distances[nodeIndex] + "\t\t");
-            printPath(nodeIndex, parentArr);
+            printShortestPath(nodeIndex, parentArr);
 			if (target_node == nodeIndex)
 				System.out.print("<---- target found");
         }
     }
 }
 
-// print shortest path from  source to curNode
-static void printPath(int curNode, int[] parentArr) {
+static void printShortestPath(int curNode, int[] parentArr) {
     // Source node has been processed
     if (curNode == NO_PARENT)
         return;
-    printPath(parentArr[curNode], parentArr);
+    printShortestPath(parentArr[curNode], parentArr);
     System.out.print(curNode + " - ");
 }
 }
