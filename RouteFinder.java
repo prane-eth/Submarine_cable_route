@@ -4,21 +4,25 @@ import java.io.File;
 class RouteFinder	{
 	static int[][] arr;
 	public static void main(String[] args)	{
-		boolean status = read_data();
-		if (status != true)
+		boolean success = read_data();
+		if (!success)
 			return;
+
+        // add nodes to hashmap
 		HashMap<Integer, String> hm = new HashMap<Integer, String>();
 		hm.put(0, "Mumbai");
 		hm.put(1, "Chennai");
 		hm.put(2, "Singapore");
 		hm.put(3, "Japan");
 		hm.put(4, "USA");
-		// display all nodes from hashmap
 		System.out.println("");
-		for (int num: hm.keySet())
+
+		// display all nodes from hashmap
+		for (int num: hm.keySet())  // display node
             System.out.println("\t" + num + " - " + hm.get(num));
 		System.out.println("");
 
+        // take input for target
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter your target: ");
 		int target = scan.nextInt();
@@ -35,16 +39,16 @@ class RouteFinder	{
 				rows++;  // count rows
 				sc.nextLine();
 			}
+            sc.close();
 			int columns = rows;
 			arr = new int[rows][columns];
-			sc.close();
 
-			// read in the data
+			// read integers from file
 			sc = new Scanner(new File("matrix.txt"));
 			for (int row = 0; row < rows; row++)
 				for (int col = 0; col < columns; col++)
-					if (sc.hasNextInt())
-						arr[row][col] = sc.nextInt();
+					// if (sc.hasNextInt())
+					arr[row][col] = sc.nextInt();
 			sc.close();
 
 			return true;
@@ -56,7 +60,6 @@ class RouteFinder	{
 }
 
 
-
 class DijkstrasAlgorithm {
 
 static int NO_PARENT = -1;
@@ -66,6 +69,9 @@ static int target_node;
 static void process(int target1, int[][] matrix, HashMap<Integer, String> hm1)   {
 	target_node = target1;
     hm = hm1;
+    int numNodes = matrix.length;
+    if (target1 <= 0 || target1 >= numNodes)
+        System.out.println("\t Target " + target1 + " can't be found");
     dijkstra(matrix, 0);
 }  //
 
@@ -136,7 +142,7 @@ static void printSolution(int startNode,
                             int[] distances,
                             int[] parentArr)  {
     int numNodes = distances.length;
-    System.out.print("    Vertex\t\tDistance\tPath");
+    System.out.print("\n     Vertex\t\t Distance\tPath");
     
     for (int nodeIndex = 0;
             	nodeIndex < numNodes; nodeIndex++)  {
