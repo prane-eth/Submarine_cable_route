@@ -73,7 +73,7 @@ static void process(int target1, int[][] matrix, HashMap<Integer, String> hm1)  
     if (target1 <= 0 || target1 >= numNodes)
         System.out.println("\t Target " + target1 + " can't be found");
     dijkstra(matrix, 0);
-}  //
+
 
 static void dijkstra(int[][] matrix, int startNode)  {
     int numNodes = matrix[0].length;
@@ -144,8 +144,10 @@ static void printSolution(int startNode,
     int numNodes = distances.length;
     System.out.print("\n     Node\t\t Distance\tPath");
     
+    // for each nodeIndex, print distance and path
     for (int nodeIndex = 0;
             	nodeIndex < numNodes; nodeIndex++)  {
+        // for start node, we wont find distance
         if (nodeIndex != startNode)  {
             System.out.print("\n" + startNode);
 			System.out.print(" -> " + nodeIndex + " ");
