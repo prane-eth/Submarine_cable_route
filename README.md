@@ -11,6 +11,9 @@ Finds the best path to send the data through submarine cables.
 ### <ins> Title</ins>: Submarine cable route planner
 ### <ins> Group</ins>: G7
 
+### Report
+
+
 #### <ins> Objectives</ins>: 
   To help the networking companies manage the routes in an efficient way to save the operating costs, and send data in a minimal amount of time.
 
@@ -19,9 +22,6 @@ Finds the best path to send the data through submarine cables.
 The algorithm finds the shortest path between the mentioned source and destination which is entered by the user.
 
 Code is uploaded to GitHub repository: https://github.com/vh-praneeth/Submarine_cable_route
-
-#### <ins> Sample Output</ins>: 
-![Sample Output](./images/sample_output.png "Sample Output")
 
 #### <ins> Map screenshot</ins>: 
 ![Map screenshot](./images/map_screenshot.png "Map screenshot")
