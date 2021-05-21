@@ -22,7 +22,6 @@ class RouteFinder	{
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter your target: ");
 		int target = scan.nextInt();
-		scan.close();
 
 		DijkstrasAlgorithm d = new DijkstrasAlgorithm();
 		d.process(target, arr, hm);
@@ -64,44 +63,40 @@ static int NO_PARENT = -1;
 static HashMap<Integer, String> hm;
 static int target_node;
 
-// Function that implements Dijkstra's
-// single source shortest path
-// algorithm for a graph represented
-// using adjacency matrix representation
-static void dijkstra(int[][] matrix, int startVertex)  {
+static void process(int target1, int[][] matrix, HashMap<Integer, String> hm1)   {
+	target_node = target1;
+    hm = hm1;
+    dijkstra(matrix, 0);
+}  //
+
+static void dijkstra(int[][] matrix, int startNode)  {
     int numNodes = matrix[0].length;
 
-    // shortestDists[i] will hold the
     // shortest distance from src to i
     int[] shortestDists = new int[numNodes];
 
-    // added[i] will true if vertex i is
-    // included / in shortest path tree
+    // added[i] =true if vertex i is
+    // included in shortest path
     // or shortest distance from src to
     // i is finalized
     boolean[] added = new boolean[numNodes];
 
-    // Initialize all distances as INFINITE and added[] as false
     for (int nodeIndex = 0;
             nodeIndex < numNodes; nodeIndex++) {
-        shortestDists[nodeIndex] = Integer.MAX_VALUE;
+        shortestDists[nodeIndex] = Integer.MAX_VALUE;  // init as infinite
         added[nodeIndex] = false;
     }
     
-    // Distance of source vertex from itself is always 0
-    shortestDists[startVertex] = 0;
-
-    // Parent array to store shortest path tree
-    int[] parentArr = new int[numNodes];
-
-    // The starting vertex does not have a parent
-    parentArr[startVertex] = NO_PARENT;
+    // Distance of startNode from itself = 0
+    shortestDists[startNode] = 0;
+    int[] parentArr = new int[numNodes];  // store shortest path
+    parentArr[startNode] = NO_PARENT;  // startNode has no parent
 
     // Find shortest path for all vertices
     for (int i = 1; i < numNodes; i++) {
 
         // Pick the minimum distance vertex
-        // from the set of unprocessed vertices
+        // from the set of unprocessed vertices.
         // nearestVertex is always equal
         // to startNode in first iteration.
         int nearestVertex = -1;
@@ -134,12 +129,11 @@ static void dijkstra(int[][] matrix, int startVertex)  {
             }
         }
     }
-    printSolution(startVertex, shortestDists, parentArr);
+    printSolution(startNode, shortestDists, parentArr);
 }
 
-// A utility function to print the constructed
-// distances array and shortest paths
-static void printSolution(int startVertex,
+// print distances and shortest paths
+static void printSolution(int startNode,
                             int[] distances,
                             int[] parentArr)  {
     int numNodes = distances.length;
@@ -147,20 +141,19 @@ static void printSolution(int startVertex,
     
     for (int nodeIndex = 0;
             	nodeIndex < numNodes; nodeIndex++)  {
-        if (nodeIndex != startVertex)  {
-            System.out.print("\n" + startVertex);
+        if (nodeIndex != startNode)  {
+            System.out.print("\n" + startNode);
 			System.out.print(" -> " + nodeIndex + " ");
             System.out.print(hm.get(nodeIndex) + " \t\t ");
             System.out.print(distances[nodeIndex] + "\t\t");
             printPath(nodeIndex, parentArr);
 			if (target_node == nodeIndex)
-				System.out.print("<- target");
+				System.out.print("<---- target found");
         }
     }
 }
 
-// Function to print shortest path from 
-// source to curNode using parentArr array
+// print shortest path from  source to curNode
 static void printPath(int curNode, int[] parentArr) {
     // Source node has been processed
     if (curNode == NO_PARENT)
@@ -168,22 +161,4 @@ static void printPath(int curNode, int[] parentArr) {
     printPath(parentArr[curNode], parentArr);
     System.out.print(curNode + " - ");
 }
-
-static void process(int target1, int[][] matrix, HashMap<Integer, String> hm1)   {
-	target_node = target1;
-    hm = hm1;
-    dijkstra(matrix, 0);
-}
-
-// public static void main(String[] args) {
-//     int[][] matrix = {
-//         {0, 1, 6, 0, 0},
-//         {1, 0, 6, 0, 0},
-//         {0, 1, 0, 6, 9},
-//         {0, 2, 6, 0, 5},
-//         {7, 0, 0, 0, 0}
-//     };
-//     dijkstra(matrix, 0);
-//     System.out.println("");
-// }
 }
