@@ -11,12 +11,14 @@ Finds the best path to send the data through submarine cables.
 ### <ins> Title</ins>: Submarine cable route planner
 ### <ins> Group</ins>: G7
 
-### Report
+# Project Report
 ##### <ins> Graph visualization</ins>: 
 ![Graph](./images/visual.png)
 
 ##### <ins> Output</ins>: 
 ![Output](./images/output.png)
+
+# Project synopsis
 
 #### <ins> Objectives</ins>: 
   To help the networking companies manage the routes in an efficient way to save the operating costs, and send data in a minimal amount of time.
