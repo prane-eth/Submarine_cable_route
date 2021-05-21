@@ -73,7 +73,7 @@ static void process(int target1, int[][] matrix, HashMap<Integer, String> hm1)  
     if (target1 <= 0 || target1 >= numNodes)
         System.out.println("\t Target " + target1 + " can't be found");
     dijkstra(matrix, 0);
-
+}
 
 static void dijkstra(int[][] matrix, int startNode)  {
     int numNodes = matrix[0].length;
