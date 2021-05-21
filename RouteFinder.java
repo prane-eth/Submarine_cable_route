@@ -81,7 +81,7 @@ static void dijkstra(int[][] matrix, int startNode)  {
     // shortest distance from src to i
     int[] shortestDists = new int[numNodes];
 
-    // added[i] =true if vertex i is
+    // added[i] =true if node i is
     // included in shortest path
     // or shortest distance from src to
     // i is finalized
@@ -101,35 +101,35 @@ static void dijkstra(int[][] matrix, int startNode)  {
     // Find shortest path for all vertices
     for (int i = 1; i < numNodes; i++) {
 
-        // Pick the minimum distance vertex
+        // Pick the minimum distance node
         // from the set of unprocessed vertices.
-        // nearestVertex is always equal
+        // nearestNode is always equal
         // to startNode in first iteration.
-        int nearestVertex = -1;
+        int nearestNode = -1;
         int shortestDist = Integer.MAX_VALUE;
         for (int nodeIndex = 0; nodeIndex < numNodes;
                 	nodeIndex++)  {
             if (!added[nodeIndex]
                     && shortestDists[nodeIndex] <
                     shortestDist) {
-                nearestVertex = nodeIndex;
+                nearestNode = nodeIndex;
                 shortestDist = shortestDists[nodeIndex];
             }
         }
 
-        // Mark the picked vertex as processed
-        added[nearestVertex] = true;
+        // Mark the picked node as processed
+        added[nearestNode] = true;
 
         // Update dist value of the adjacent
-        // vertices of the picked vertex.
+        // vertices of the picked node.
         for (int nodeIndex = 0; nodeIndex < numNodes; nodeIndex++) {
-            int edgeDistance = matrix[nearestVertex][nodeIndex];
+            int edgeDistance = matrix[nearestNode][nodeIndex];
             
             // if current shortest dist < existing shortest dist, update array
             if (edgeDistance > 0
                     && (shortestDist + edgeDistance <
                     shortestDists[nodeIndex])) {
-                parentArr[nodeIndex] = nearestVertex;
+                parentArr[nodeIndex] = nearestNode;
                 shortestDists[nodeIndex] = 
                         shortestDist + edgeDistance;
             }
@@ -142,7 +142,7 @@ static void printSolution(int startNode,
                             int[] distances,
                             int[] parentArr)  {
     int numNodes = distances.length;
-    System.out.print("\n     Vertex\t\t Distance\tPath");
+    System.out.print("\n     Node\t\t Distance\tPath");
     
     for (int nodeIndex = 0;
             	nodeIndex < numNodes; nodeIndex++)  {
